@@ -1,0 +1,111 @@
+.article-carousel {
+    margin: 80px 0;
+
+    @include mobile {
+        margin: 80px -12px;
+    }
+
+    &__slider-item {
+        width: 214px;
+
+        @include mobile {
+            margin: 0 auto;
+            max-width: 214px;
+        }
+    }
+
+    &__slide {
+        position: relative;
+
+        @include mobile {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__slider-container {
+        margin: 0 auto;
+        overflow-x: hidden;
+        position: relative;
+        width: 680px;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__swiper-pagination {
+        display: none;
+
+        @include mobile {
+            display: flex;
+        }
+    }
+
+    &__next,
+    &__prev {
+        @include absolute(50%);
+        @include flex-all-center;
+        @include size(32px);
+        @include trs();
+        background-color: $color-white;
+        border: 1px solid var(--color-blue);
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: -15px;
+        z-index: 2;
+
+        @include mobile {
+            display: none;
+        }
+
+        @include on-event {
+            background-color: var(--color-blue);
+
+            svg {
+                path {
+                    stroke: $color-white;
+                }
+            }
+        }
+
+        &.swiper-button-disabled {
+            border-color: var(--color-gray-50);
+
+            svg {
+                path {
+                    stroke: var(--color-gray-50);
+                }
+            }
+        }
+    }
+
+    &__next {
+        right: -16px;
+    }
+
+    &__prev {
+        left: -16px;
+    }
+
+    &__swiper-pagination {
+        bottom: -30px !important;
+        justify-content: center;
+    }
+
+    .swiper-pagination-bullet {
+        @include size(8px);
+        background-color: var(--color-stroke);
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: var(--color-gray-50);
+        opacity: 1;
+    }
+
+    &__paragraph {
+        margin-top: 12px;
+    }
+}

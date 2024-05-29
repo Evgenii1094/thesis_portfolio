@@ -1,0 +1,87 @@
+.article-faq {
+    margin: 48px 0 80px;
+
+    .title {
+        margin-bottom: 32px;
+    }
+
+    &__comment {
+        border: 1px solid var(--color-stroke);
+        border-radius: 6px;
+        margin: 48px 0;
+        padding: 24px 20px;
+    }
+
+    &__name {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-blue);
+        padding-left: 18px;
+        position: relative;
+
+        &::before {
+            @include absolute(50%, null, null, 0);
+            @include size(12px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.06252 3.375C7.97064 4.61414 7.03127 5.625 6.00002 5.625C4.96877 5.625 4.02775 4.61438 3.93752 3.375C3.84377 2.08594 4.75783 1.125 6.00002 1.125C7.24221 1.125 8.15627 2.10938 8.06252 3.375Z' stroke='%232458A4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.00006 7.125C3.96099 7.125 1.89146 8.25 1.50849 10.3734C1.46232 10.6294 1.60717 10.875 1.87506 10.875H10.1251C10.3932 10.875 10.538 10.6294 10.4919 10.3734C10.1087 8.25 8.03912 7.125 6.00006 7.125Z' stroke='%232458A4' stroke-miterlimit='10'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translateY(-50%);
+        }
+    }
+
+    &__paragraph {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-dark);
+    }
+
+    &__title {
+        @include font(var(--typo-1), 18px, var(--fw-semibold));
+        color: var(--color-dark);
+        margin-right: 40px;
+
+        @include mobile {
+            margin: 0 0 12px;
+        }
+    }
+
+    &__help {
+        @include flex-all-sb;
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__helpful {
+        @include mobile {
+            flex-direction: column;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__helpful,
+    &__social {
+        @include flex-v-center;
+    }
+
+    &__buttons {
+        @include flex-v-center;
+        gap: 0 20px;
+    }
+
+    &__social-title {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-dark);
+        margin-right: 20px;
+    }
+
+    &__social-link {
+        display: flex;
+        margin-right: 10px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}

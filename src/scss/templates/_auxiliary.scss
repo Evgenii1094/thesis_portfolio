@@ -1,0 +1,20 @@
+.overlay {
+    @include fixed(60px, null, null, 0);
+    @include trs();
+    @include size(100%);
+    background-color: var(--color-dark);
+    display: none;
+    opacity: 0.4;
+    z-index: 100;
+
+    .is-blog-page &,
+    .is-article-page & {
+        top: 70px;
+    }
+}
+
+.site-wrapper {
+    &.is-fixed {
+        padding-top: 117px;
+    }
+}

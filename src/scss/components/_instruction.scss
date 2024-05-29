@@ -1,0 +1,55 @@
+.instruction {
+    .title {
+        margin: 0 auto 48px;
+        width: 580px;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 48px 0;
+    }
+
+    &__item {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        gap: 0 120px;
+
+        @include tablet {
+            align-items: center;
+            flex-direction: column;
+            gap: 24px 0;
+        }
+
+        &.is-reverse {
+            @include tablet {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    &__picture {
+        flex-shrink: 0;
+
+        img {
+            width: 480px;
+        }
+    }
+
+    &__content {
+        padding-top: 24px;
+    }
+
+    &__title {
+        margin-bottom: 12px;
+    }
+
+    &__btn {
+        margin-top: 24px;
+    }
+}

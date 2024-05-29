@@ -1,0 +1,117 @@
+.faq {
+    $this: &;
+
+    @include tablet {
+        margin-bottom: 210px;
+
+        .is-article-page & {
+            margin-bottom: 48px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+    }
+
+    &__title {
+        margin-bottom: 48px;
+    }
+
+    &__info {
+        flex-shrink: 0;
+        margin-right: 20px;
+        width: 380px;
+
+        @include tablet {
+            margin: 0;
+            text-align: center;
+            width: 460px;
+        }
+
+        @include mobile {
+            max-width: 460px;
+            width: 100%;
+        }
+    }
+
+    &__wrapper {
+        background-color: $color-white;
+        border-bottom: 2px solid var(--color-stroke);
+
+        &:first-child {
+            border-top: 2px solid var(--color-stroke);
+        }
+    }
+
+    &__question {
+        @include font(var(--typo-1), 18px, var(--fw-semibold));
+        @include trs();
+        color: var(--color-dark);
+        cursor: pointer;
+        padding: 24px 0;
+        position: relative;
+        z-index: 1;
+
+        @include mobile {
+            padding-right: 35px;
+        }
+
+        @include on-event {
+            color: var(--color-blue);
+
+            &::before {
+                background-image: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"> <path d="M4 9.5L12 17.5L20 9.5" stroke="#2458A4" stroke-width="2"/> </svg>');
+            }
+        }
+
+        &::before {
+            @include absolute(50%, 0);
+            @include size(24px);
+            @include trs();
+            background: {
+                image: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"> <path d="M4 9.5L12 17.5L20 9.5" stroke="#2E3543" stroke-width="2"/> </svg>');
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translateY(-50%);
+        }
+
+        .is-open & {
+            color: var(--color-blue);
+
+            &::before {
+                background-image: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"> <path d="M4 9.5L12 17.5L20 9.5" stroke="#2458A4" stroke-width="2"/> </svg>');
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+
+    &__answer {
+        @include trs();
+        max-height: 0;
+        opacity: 0;
+
+        .is-open & {
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+
+    &__answer-inner {
+        padding: 0 20px 30px 0;
+    }
+
+    &__link {
+        @include tablet {
+            @include absolute(null, null, -90px, 50%);
+            transform: translateX(-50%);
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.article-form {
+    margin: 80px 0 0;
+
+    @include tablet {
+        margin-bottom: 0;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px 0;
+    }
+
+    &__inner {
+        @include flex-v-center;
+    }
+
+    &__input,
+    &__area {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        border: 1px solid var(--color-stroke);
+        border-radius: 6px;
+        color: var(--color-dark);
+        padding: 12px 20px;
+        width: 100%;
+
+        &::placeholder {
+            color: var(--color-gray-50);
+        }
+    }
+
+    &__checkbox {
+        @include size(16px);
+        border: 1px solid var(--color-stroke);
+        border-radius: 6px;
+    }
+
+    &__checkbox-label {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-dark);
+        margin-left: 10px;
+    }
+
+    &__btn {
+        @include flex-h-center;
+        margin-top: 12px;
+    }
+}

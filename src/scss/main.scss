@@ -1,0 +1,87 @@
+// base
+@import "config";
+@import "mixins";
+@import "fonts";
+
+// templates
+@import "./templates/container";
+@import "./templates/button";
+@import "./templates/section";
+@import "./templates/title";
+@import "./templates/paragraph";
+@import "./templates/item-title";
+@import "./templates/site-wrapper";
+@import "./templates/navigation";
+@import "templates/auxiliary";
+
+// index.html
+@import "./components/header";
+@import "./components/header-nav";
+@import "./components/main";
+@import "./components/chat";
+@import "./components/advantages";
+@import "./components/trust";
+@import "./components/person";
+@import "./components/review";
+@import "./components/benefits";
+@import "./components/writers";
+@import "components/work";
+@import "components/inclusive";
+@import "components/achieve";
+@import "./components/side-list";
+@import "components/academy";
+@import "./components/guarantees";
+@import "components/faq";
+@import "./components/footer";
+@import "./components/dropdown-menu";
+
+// about.html
+@import "components/value";
+@import "components/instruction";
+
+// top.html
+@import "components/for-top";
+@import "components/find";
+
+// service.html
+@import "components/service-tab";
+@import "components/writing-list";
+
+// price.html
+@import "components/sales";
+@import "components/calculator";
+@import "components/price-tab";
+@import "components/price-value";
+
+// review-page.html
+@import "components/review-main";
+@import "components/feedback";
+@import "components/review-form";
+
+// contact-page.html
+@import "components/contact-info";
+@import "components/contact-form";
+
+// contact-page.html
+@import "components/error-block";
+
+// seo-page.html
+@import "components/seo-main";
+
+// blog-page.html
+@import "components/pre-header";
+@import "components/blog-main";
+@import "components/blog-adv";
+@import "components/blog-news";
+@import "components/blog-post";
+@import "components/blog-about";
+@import "components/blog-write";
+
+// blog-page.html
+@import "components/article-post";
+@import "components/article-news";
+@import "components/article-faq";
+@import "components/article-carousel";
+@import "components/article-link";
+@import "components/article-comment";
+@import "components/article-form";

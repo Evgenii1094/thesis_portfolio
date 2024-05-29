@@ -1,0 +1,282 @@
+.footer {
+    $this: &;
+    background-color: var(--color-dark);
+    position: relative;
+
+    &__wrapper {
+        padding: 60px 0 48px;
+    }
+
+    &__row {
+        &.is-first {
+            display: flex;
+            justify-content: space-between;
+
+            @include mobile {
+                align-items: center;
+                flex-direction: column-reverse;
+            }
+        }
+
+        &.is-second {
+            @include flex-all-sb;
+            padding-top: 32px;
+
+            @include tablet {
+                flex-direction: column;
+                padding: 48px 40px 0;
+                text-align: center;
+            }
+
+            @include mobile {
+                padding: 48px 0 0;
+            }
+
+            #{$this}__title {
+                font-size: 12px;
+                font-weight: var(--fw-semibold);
+                margin-bottom: 4px;
+                opacity: 0.8;
+            }
+        }
+
+        &.is-third {
+            @include flex-all-sb;
+            padding-top: 20px;
+
+            @include tablet {
+                flex-direction: column;
+                padding-top: 24px;
+                text-align: center;
+            }
+        }
+    }
+
+    &__column {
+        width: 780px;
+
+        @include tablet {
+            width: 100%;
+        }
+
+        &.is-first {
+            display: grid;
+            grid-template-columns: repeat(4, 180px);
+            gap: 0 20px;
+            width: 780px;
+
+            @include tablet {
+                grid-template-columns: repeat(2, 180px);
+                gap: 24px 20px;
+                width: 380px;
+            }
+
+            @include mobile {
+                grid-template-columns: repeat(1, 180px);
+                gap: 24px 0;
+                justify-content: center;
+                margin-top: 48px;
+                width: 100%;
+            }
+
+            #{$this}__title {
+                @include mobile {
+                    &::before {
+                        @include absolute(50%, -16px);
+                        @include size(12px);
+                        @include trs();
+                        background: {
+                            image: url("../img/carret-footer.svg");
+                            repeat: no-repeat;
+                        };
+                        content: '';
+                        transform: translateY(-50%);
+                    }
+
+                    &.is-open {
+                        &::before {
+                            transform: translateY(-50%) rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.is-second {
+            width: 280px;
+
+            @include mobile {
+                text-align: center;
+            }
+
+            #{$this}__title {
+                margin-bottom: 20px;
+            }
+        }
+
+        &.is-flex-row {
+            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(6, 38px);
+            gap: 0 11px;
+
+            @include tablet {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    &__inner {
+        @include mobile {
+            text-align: center;
+        }
+    }
+
+    &__list {
+        @include mobile {
+            @include trs();
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        &.is-open {
+            margin-top: 20px;
+            max-height: 500px;
+        }
+    }
+
+    &__item {
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title,
+    &__extralink {
+        @include font(var(--typo-1), 14px, var(--fw-semibold));
+        color: $color-white;
+    }
+
+    &__extralink {
+        @include on-event {
+            text-decoration: underline;
+        }
+    }
+
+    &__title {
+        margin-bottom: 12px;
+        position: relative;
+
+        @include mobile {
+            display: inline-flex;
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: $color-white;
+
+        @include on-event {
+            text-decoration: underline;
+        }
+    }
+
+    &__info {
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtitle,
+    &__paragraph,
+    &__copyright {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: $color-white;
+        line-height: normal;
+    }
+
+    &__paragraph,
+    &__copyright {
+        opacity: 0.8;
+    }
+
+    &__descr {
+        @include flex-v-center;
+        margin-bottom: 4px;
+
+        @include mobile {
+            justify-content: center;
+        }
+    }
+
+    &__info-icon {
+        @include size(10px);
+        display: inline-flex;
+        margin-right: 8px;
+        position: relative;
+
+        &::before {
+            @include absolute(0, null, null, 0);
+            @include size(10px);
+            background: {
+                image: url("../img/e-mail.svg");
+                repeat: no-repeat;
+            };
+            content: '';
+        }
+
+        &.is-phone {
+            &::before {
+                background-image: url("../img/phone.svg");
+            }
+        }
+    }
+
+    &__list-rule {
+        display: flex;
+
+        @include tablet {
+            justify-content: center;
+        }
+
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item-rule {
+        margin-right: 40px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include mobile {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__link-rule {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: $color-white;
+        line-height: normal;
+        text-decoration: underline;
+
+        @include on-event {
+            text-decoration: none;
+        }
+    }
+
+    &__copyright {
+        padding-top: 20px;
+
+        @include mobile {
+            padding-top: 8px;
+        }
+    }
+}

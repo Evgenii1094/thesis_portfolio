@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@include('partials/head.html')
+
+<body class="is-blog-page">
+@include('partials/pre-header.html')
+@include('partials/header.html')
+<main class="site-wrapper">
+    @include('partials/chat.html')
+    @include('partials/blog-main.html')
+    @include('partials/blog-adv.html')
+    <section class="site-wrapper__inner container">
+        <article class="site-wrapper__content">
+            @include('partials/blog-news.html')
+        </article>
+        <aside class="site-wrapper__sidebar">
+            @include('partials/blog-post.html')
+            @include('partials/blog-about.html')
+            @include('partials/blog-write.html')
+        </aside>
+    </section>
+</main>
+@include('partials/footer.html')
+<div class="overlay"></div>
+</body>
+
+</html>
+

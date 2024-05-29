@@ -1,0 +1,41 @@
+.contact-info {
+    margin-top: 80px;
+
+    &__wrapper {
+        display: grid;
+        gap: 0 150px;
+        grid-template-columns: 280px 320px 280px;
+
+        @include tablet {
+            gap: 48px 0;
+            grid-template-columns: auto;
+        }
+    }
+
+    &__link {
+        @include trs();
+
+        @include on-event {
+            color: var(--color-accent);
+        }
+    }
+
+    &__item {
+        @include flex-v-center;
+        flex-direction: column;
+        gap: 24px 0;
+    }
+
+    &__content {
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: 8px;
+    }
+
+    &__descr {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: var(--color-dark);
+    }
+}

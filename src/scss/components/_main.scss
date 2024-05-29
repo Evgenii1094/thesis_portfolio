@@ -1,0 +1,191 @@
+.main {
+    $this: &;
+
+    &__container {
+        @include flex;
+
+        @include tablet {
+            align-items: center;
+            flex-direction: column;
+        }
+
+        @include mobile {
+            padding: 0 20px;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+
+        &:first-child {
+            margin: 80px 122px 0 0;
+            width: 580px;
+
+            @include tablet {
+                align-items: center;
+                margin: 0 0 80px;
+            }
+
+            @include mobile {
+                margin-bottom: 48px;
+                width: 100%;
+            }
+        }
+    }
+
+    &__content {
+        margin-bottom: 48px;
+
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    &__teaser {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-blue);
+        display: inline-flex;
+        margin-bottom: 12px;
+    }
+
+    &__teaser-icon {
+        @include size(24px);
+        display: inline-flex;
+        margin-right: 8px;
+        position: relative;
+
+        &::before {
+            @include absolute(50%, null, null, 0);
+            @include size(24px);
+            background: {
+                image: url("../img/main-diagram.svg");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translateY(-50%);
+        }
+    }
+
+    &__title {
+        @include font(var(--typo-1), 46px, var(--fw-semibold));
+        color: var(--color-dark);
+        line-height: normal;
+        margin-bottom: 12px;
+
+        @include mobile {
+            font-size: 38px;
+        }
+
+        .is-blue {
+            color: var(--color-blue);
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 173px 155px 158px;
+        grid-template-rows: 1fr;
+        gap: 0px 30px;
+
+        @include mobile {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__brand {
+        @include flex-v-center;
+        @include size(100%, 24px);
+
+        @include mobile {
+            @include size(83px, 24px);
+        }
+
+        &:nth-child(2) {
+            #{$this}__brand-image {
+                @include size(97px, 24px);
+
+                @include mobile {
+                    @include size(24px);
+                }
+
+                &::before {
+                    @include size(97px, 24px);
+                    background-image: url('../img/sitejabber-main.svg');
+
+                    @include mobile {
+                        @include size(24px);
+                        background-image: url('../img/sitejabber-main-mb.svg');
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            #{$this}__brand-image {
+                @include size(101px, 24px);
+
+                @include mobile {
+                    @include size(24px);
+                }
+
+                &::before {
+                    @include size(101px, 24px);
+                    background-image: url('../img/trustpilot-main.svg');
+
+                    @include mobile {
+                        @include size(24px);
+                        background-image: url('../img/trustpilot-main-mb.svg');
+                    }
+                }
+            }
+        }
+    }
+
+    &__brand-image {
+        @include size(117px, 24px);
+        display: inline-flex;
+        position: relative;
+
+        @include mobile {
+            @include size(24px);
+        }
+
+        &::before {
+            @include absolute(0, null, null, 0);
+            @include size(117px, 24px);
+            background: {
+                image: url("../img/thesishelpers-main.svg");
+                repeat: no-repeat;
+            };
+            content: '';
+
+            @include mobile {
+                @include size(24px);
+                background-image: url('../img/thesis-main-mb.svg');
+            }
+        }
+    }
+
+    &__brand-num {
+        @include font(var(--typo-1), 19px, var(--fw-semibold));
+        color: var(--color-accent);
+        margin: 0 5px 0 9px;
+
+        &.is-orange {
+            color: #F27E38;
+        }
+
+        &.is-dark {
+            color: #191919;
+        }
+    }
+
+    &__brand-star {
+        @include flex-all-center;
+
+        svg {
+            @include size(16.8px);
+        }
+    }
+}

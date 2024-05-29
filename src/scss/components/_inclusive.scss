@@ -1,0 +1,105 @@
+.inclusive {
+    &__container {
+        width: 768px;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__list {
+        @include flex-all-center;
+
+        @include mobile {
+            display: grid;
+            grid-template-columns: minmax(139px, 1fr) repeat(2, 1fr);
+        }
+    }
+
+    &__link {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        @include trs();
+        border-bottom: 2px solid var(--color-stroke);
+        cursor: pointer;
+        color: var(--color-gray);
+        padding: 24px 20px;
+        text-align: center;
+        width: 260px;
+
+        @include on-event {
+            color: var(--color-blue);
+        }
+
+        @include tablet {
+            width: 240px;
+        }
+
+        @include mobile {
+            font-size: 16px;
+            padding: 24px 10px;
+            width: 100%;
+        }
+
+        &.is-active {
+            border-color: var(--color-blue);
+            color: var(--color-blue);
+            font-weight: var(--fw-semibold);
+        }
+    }
+
+    &__inner {
+        margin-top: 32px;
+        min-height: 132px;
+        position: relative;
+
+        @include tablet {
+            margin: 32px 20px 0;
+        }
+
+        @include mobile {
+            margin: 32px 0 0;
+            min-height: 276px;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 290px);
+        gap: 12px 40px;
+
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__item {
+        @include font(var(--typo-1), 16px, var(--fw-normal));
+        color: var(--color-dark);
+        padding-left: 20px;
+        position: relative;
+
+        &::before {
+            @include absolute(50%, null, null, 0);
+            @include size(8px);
+            background-color: var(--color-blue);
+            border-radius: 50%;
+            content: '';
+            transform: translateY(-50%);
+        }
+    }
+
+    &__content {
+        @include absolute(0, null, null, 0);
+        @include trs();
+
+        &.is-hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.is-show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.btn {
+    @include font(var(--typo-1), 14px, var(--fw-semibold));
+    @include trs;
+    align-items: center;
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 6px;
+    color: $color-white;
+    display: inline-flex;
+    justify-content: center;
+    padding: 11px 28px;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    svg {
+        path {
+            @include trs();
+        }
+    }
+
+    @include on-event {
+        @include trs();
+        color: $color-white;
+        opacity: 0.6;
+    }
+
+    &.is-transparent {
+        background-color: inherit;
+        border: 1px solid var(--color-dark);
+        color: var(--color-dark);
+        font-weight: var(--fw-medium);
+
+        @include on-event {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            opacity: 1;
+
+            svg {
+                path {
+                    fill: var(--color-accent);
+                }
+            }
+        }
+    }
+}

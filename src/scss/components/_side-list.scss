@@ -1,0 +1,199 @@
+.side-list {
+    $this: &;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 0 20px;
+
+        @include tablet {
+            flex-direction: column;
+            gap: 32px 0;
+        }
+
+        @include mobile {
+            gap: 24px 0;
+        }
+    }
+
+    &__nav {
+        width: 380px;
+
+        @include tablet {
+            margin: 0 auto;
+            width: 730px;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__dropdown-btn {
+        display: none;
+
+        @include tablet {
+            @include flex-all-sb;
+            @include font(var(--typo-1), 18px, var(--fw-semibold));
+            background-color: $color-white;
+            border: 0;
+            border-bottom: 2px solid var(--color-dark);
+            color: var(--color-blue);
+            padding: 24px 0;
+            text-align: left;
+            width: 100%;
+        }
+    }
+
+    &__dropdown-icon {
+        @include tablet {
+            @include size(13px);
+            margin-left: 10px;
+            position: relative;
+
+            &::before {
+                @include absolute(50%, 0);
+                @include size(13px);
+                @include trs;
+                background: {
+                    image: url('../img/carret-down-blue.svg');
+                    repeat: no-repeat;
+                };
+                content: '';
+                transform: translateY(-50%);
+
+                .is-open & {
+                    transform: translateY(-50%) rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &__list {
+        @include trs;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            max-height: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .is-open & {
+            max-height: max-content;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__item {
+        @include font(var(--typo-1), 18px, var(--fw-normal));
+        @include trs();
+        border-bottom: 1px solid var(--color-stroke);
+        color: var(--color-gray);
+        cursor: pointer;
+        padding: 20px 24px 20px 0;
+
+        @include on-event {
+            color: var(--color-blue);
+        }
+
+        &.is-active {
+            color: var(--color-blue);
+        }
+    }
+
+    &__content {
+        @include size(80%, 100%);
+        margin: 0 auto;
+        max-height: 485px;
+        overflow-y: auto;
+
+        h1, h2 {
+            font-family: var(--typo-1);
+            font-size: 36px;
+            font-weight: var(--fw-semibold);
+            color: var(--color-dark);
+            line-height: normal;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-family: var(--typo-1);
+            font-size: 26px;
+            font-weight: var(--fw-semibold);
+            color: var(--color-dark);
+            line-height: normal;
+            margin-bottom: 8px;
+        }
+
+        p {
+            padding: 20px 0;
+            font-family: var(--typo-1);
+            font-size: 16px;
+            font-weight: var(--fw-normal);
+            color: var(--color-gray);
+        }
+
+        @include tablet {
+
+        }
+
+        &::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-blue);
+            border-radius: 6px;
+            height: 32px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: var(--color-stroke);
+        }
+    }
+
+    &__content-wrapper {
+        position: relative;
+
+        @include tablet {
+            @include flex-h-center;
+        }
+
+        &::before {
+            @include absolute(null, null, -1px, 0);
+            @include size(100%, 50px);
+            background: linear-gradient(rgba($color-white, 0), white);
+            content: '';
+            pointer-events: none;
+            z-index: 1;
+        }
+    }
+
+    &__inner,
+    &__stub {
+        padding-left: 20px;
+        margin-bottom: 48px;
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__title {
+        @include font(var(--typo-1), 46px, var(--fw-semibold));
+        color: var(--color-dark);
+        line-height: normal;
+        margin-bottom: 12px;
+
+        @include tablet {
+            font-size: 36px;
+        }
+
+        @include mobile {
+            font-size: 28px;
+        }
+    }
+}

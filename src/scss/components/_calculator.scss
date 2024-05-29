@@ -1,0 +1,255 @@
+.calculator {
+    .is-seo-page &,
+    .is-home-page & {
+        margin: 0;
+    }
+
+    &__container {
+        width: 980px;
+
+        @include tablet {
+            padding: 0;
+            width: 320px;
+        }
+
+        .is-home-page & {
+            position: relative;
+            width: 320px;
+
+            &::after {
+                @include size(80px, 107px);
+                @include absolute(10px, null, null, -80px);
+                background: {
+                    image: url("../img/lamp.svg");
+                    repeat: no-repeat;
+                };
+                content: '';
+
+                @include mobile {
+                    content: none;
+                }
+            }
+
+            &::before {
+                @include size(132px, 330px);
+                @include absolute(null, -145px, 0, null);
+                background: {
+                    image: url("../img/person.svg");
+                    repeat: no-repeat;
+                };
+                content: '';
+
+                @include mobile {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 0 10px;
+        grid-template-columns: 180px 180px 200px 290px;
+
+        @include tablet {
+            grid-template-columns: auto;
+            width: 272px;
+        }
+
+        .is-home-page & {
+            grid-template-columns: auto;
+            width: 272px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 24px;
+
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    &__form {
+        align-items: center;
+        background-color: var(--color-bg);
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    &__inner {
+        display: grid;
+        gap: 0 10px;
+        grid-template-columns: 160px 160px 200px 160px;
+
+        @include tablet {
+            gap: 12px 0;
+            grid-template-columns: repeat(1, 272px);
+        }
+
+        .is-home-page & {
+            gap: 12px 0;
+            grid-template-columns: repeat(1, 272px);
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__group {
+        align-items: center;
+        display: flex;
+
+        @include tablet {
+            flex-direction: column;
+            margin-top: 6px;
+            width: 100%;
+        }
+
+        .is-seo-page & {
+            justify-content: center;
+        }
+
+        .is-home-page & {
+            flex-direction: column;
+            margin-top: 6px;
+            width: 100%;
+        }
+    }
+
+    &__select-block {
+        margin-bottom: 12px;
+        position: relative;
+
+        &::after {
+            @include size(12px);
+            @include absolute(15px, 10px);
+            background: {
+                image: url("../img/carret-down.svg");
+                repeat: no-repeat;
+            };
+            content: '';
+            pointer-events: none;
+            z-index: 1;
+        }
+    }
+
+    &__label {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: var(--color-gray);
+        margin-bottom: 4px;
+    }
+
+    &__custom-select {
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+    }
+
+    &__selected-item {
+        @include font(var(--typo-1), 14px, var(--fw-meidum));
+        background-color: $color-white;
+        border: 1px solid var(--color-stroke);
+        border-radius: 5px;
+        color: var(--color-dark);
+        padding: 10px;
+    }
+
+    &__dropdown {
+        @include absolute(45px, null, null, 0);
+        @include trs();
+        background-color: $color-white;
+        border: 1px solid var(--color-stroke);
+        border-radius: 6px;
+        display: block;
+        max-height: 0;
+        opacity: 0;
+        overflow-y: auto;
+        visibility: hidden;
+        width: 100%;
+        z-index: 3;
+
+        &.is-open {
+            max-height: 300px;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__option {
+        @include font(var(--typo-1), 14px, var(--fw-meidum));
+        @include trs();
+        color: var(--color-dark);
+        cursor: pointer;
+        padding: 10px;
+
+        @include on-event {
+            background-color: var(--color-bg);
+        }
+    }
+
+    &__result {
+        @include font(var(--typo-1), 18px, var(--fw-semibold));
+        color: var(--color-dark);
+    }
+
+    &__result-text {
+        line-height: 1.25;
+        width: 140px;
+
+        &:not(.is-home-page &) {
+            margin-right: 10px;
+            width: 100px;
+
+            @include tablet {
+                width: 140px;
+            }
+        }
+    }
+
+    &__price {
+        @include flex-v-center;
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        align-items: flex-start;
+        color: var(--color-gray);
+        flex-direction: row-reverse;
+        margin-right: 10px;
+
+        @include tablet {
+            color: var(--color-dark);
+            flex-direction: row-reverse;
+            font-size: 16px;
+            justify-content: space-between;
+            margin: 0;
+            width: 100%;
+        }
+
+        .is-home-page & {
+            color: var(--color-dark);
+            flex-direction: row-reverse;
+            font-size: 16px;
+            justify-content: space-between;
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+        padding: 11px 23px;
+
+        @include tablet {
+            margin-top: 18px;
+            width: 100%;
+        }
+
+        .is-home-page & {
+            margin-top: 18px;
+            width: 100%;
+        }
+    }
+}

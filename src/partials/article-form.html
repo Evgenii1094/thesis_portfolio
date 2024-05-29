@@ -1,0 +1,50 @@
+<div class="article-form">
+    <div class="title">
+        <h2 class="title__text">Leave a Reply</h2>
+        <p class="title__text-small">Your email address will not be published</p>
+    </div>
+    <form class="article-form__form" action="#">
+        <div class="article-form__inner">
+            <textarea
+                class="article-form__area"
+                id="article-comment"
+                name="comment"
+                rows="6"
+                placeholder="Leave your comment"></textarea>
+        </div>
+
+        <div class="article-form__inner">
+            <input
+                class="article-form__area"
+                type="text"
+                id="article-name"
+                name="name"
+                placeholder="Enter your name"
+                required>
+        </div>
+
+        <div class="article-form__inner">
+            <input
+                class="article-form__area"
+                type="email"
+                id="article-email"
+                name="email"
+                placeholder="Enter your e-mail"
+                required>
+        </div>
+
+        <div class="article-form__inner">
+            <input
+                class="article-form__checkbox"
+                type="checkbox"
+                id="article-checkbox"
+                name="checkbox"
+                required>
+            <label for="article-checkbox" class="article-form__checkbox-label">Save my name and email in this browser for the next time I comment</label>
+        </div>
+
+        <div class="article-form__btn">
+            <a href="#" class="btn">Post Comment</a>
+        </div>
+    </form>
+</div>

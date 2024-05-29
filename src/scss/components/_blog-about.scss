@@ -1,0 +1,45 @@
+.blog-about {
+    display: flex;
+    gap: 48px 0;
+    flex-direction: column;
+
+    &__item {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+            margin: 0 auto;
+            max-width: 580px;
+            width: 100%;
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__picture {
+        flex-shrink: 0;
+    }
+
+    &__content {
+        margin-top: 24px;
+        text-align: center;
+
+        @include tablet {
+            margin: 0 0 0 24px;
+            text-align: left;
+        }
+
+        @include mobile {
+            margin: 24px 0 0;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: 8px;
+    }
+}

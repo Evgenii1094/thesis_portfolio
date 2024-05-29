@@ -1,0 +1,194 @@
+.find {
+    margin-bottom: 650px;
+
+    @include tablet {
+        margin-bottom: 120px;
+    }
+
+    .title {
+        margin: 0 auto 48px;
+        width: 590px;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__picture {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__content {
+        margin-bottom: 135px;
+
+        @include tablet {
+            @include flex-v-center;
+            flex-direction: column;
+            gap: 48px 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__item {
+        width: 480px;
+
+        &:first-child {
+            position: relative;
+            transform: translateX(100px);
+
+            &::before {
+                @include absolute(null, -30px, -180px, null);
+                @include size(204px, 143px);
+                background: {
+                    image: url('../img/find-arrow-1.svg');
+                    repeat: no-repeat;
+                };
+                content: '';
+
+                @include tablet {
+                    content: none;
+                }
+            }
+
+            @include tablet {
+                @include reset-position;
+                transform: none;
+                width: 580px;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(2) {
+            position: absolute;
+            right: 0;
+
+            &::before {
+                @include absolute(null, null, -340px, -60px);
+                @include size(52px, 241px);
+                background: {
+                    image: url('../img/find-arrow-2.svg');
+                    repeat: no-repeat;
+                };
+                content: '';
+
+                @include tablet {
+                    content: none;
+                }
+            }
+
+            @include tablet {
+                @include reset-position;
+                width: 580px;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(3) {
+            @include absolute(555px, 0);
+            width: 380px;
+
+            @include tablet {
+                @include reset-position;
+                width: 580px;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(4) {
+            @include absolute(null, 100px, -210px, null);
+
+            &::before {
+                @include absolute(-155px, null, null, -115px);
+                @include size(160px, 194px);
+                background: {
+                    image: url('../img/find-arrow-3.svg');
+                    repeat: no-repeat;
+                };
+                content: '';
+
+                @include tablet {
+                    content: none;
+                }
+            }
+
+            @include tablet {
+                @include reset-position;
+                width: 580px;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        &:last-child {
+            @include absolute(null, null, -510px, 100px);
+
+            &::after {
+                @include absolute(-60px, null, null, -60px);
+                @include size(75px, 70px);
+                background: {
+                    image: url('../img/find-icon.svg');
+                    repeat: no-repeat;
+                };
+                content: '';
+
+                @include tablet {
+                    content: none;
+                }
+            }
+
+            &::before {
+                @include absolute(-205px, null, null, 95px);
+                @include size(213px, 130px);
+                background: {
+                    image: url('../img/find-arrow-4.svg');
+                    repeat: no-repeat;
+                };
+                content: '';
+
+                @include tablet {
+                    content: none;
+                }
+            }
+
+            @include tablet {
+                @include reset-position;
+                width: 580px;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+
+    &__num {
+        @include font(var(--typo-1), 46px, var(--fw-semibold));
+        color: var(--color-blue);
+        margin-bottom: 24px;
+    }
+
+    &__title {
+        margin-bottom: 12px;
+    }
+
+    &__btn {
+        margin-top: 24px;
+    }
+}

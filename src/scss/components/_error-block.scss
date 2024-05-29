@@ -1,0 +1,44 @@
+.error-block {
+    margin-top: 80px;
+
+    &__container {
+        align-items: center;
+        display: grid;
+        gap: 0 220px;
+        grid-template-columns: 380px 580px;
+
+        @include tablet {
+            gap: 0 68px;
+            grid-template-columns: 280px 380px;
+            justify-content: center;
+        }
+
+        @include mobile {
+            gap: 48px 0;
+            grid-template-columns: auto;
+        }
+    }
+
+    .title {
+        text-align: left;
+
+        @include mobile {
+            text-align: center;
+        }
+
+        &__text {
+            font-size: 46px;
+
+            @include mobile {
+                font-size: 38px;
+            }
+        }
+    }
+
+    &__content {
+        @include mobile {
+            @include flex-v-center;
+            flex-direction: column;
+        }
+    }
+}

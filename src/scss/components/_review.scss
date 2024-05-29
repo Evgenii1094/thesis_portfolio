@@ -1,0 +1,119 @@
+.review {
+    overflow: hidden;
+
+    @include mobile {
+        overflow: visible;
+        padding: 0 10px;
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__item {
+        animation-timing-function: steps(1, end);
+        animation-direction: normal;
+        background-color: $color-white;
+        border: 1px solid var(--color-stroke);
+        border-radius: 6px;
+        flex: 0 0 auto;
+        margin-right: 20px;
+        padding: 24px 32px;
+        width: 480px;
+
+        @include mobile {
+            margin-right: 0;
+            width: 100%;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    @keyframes scrollAnimation {
+        0%, 100% {
+            transform: translateX(0%);
+        }
+        25%, 75% {
+            transform: translateX(-100%);
+        }
+        50% {
+            transform: translateX(-200%);
+        }
+    }
+
+    &__info {
+        @include flex-all-sb;
+        margin-bottom: 13px;
+    }
+
+    &__title {
+        @include font(var(--typo-1), 16px, var(--fw-semibold));
+        color: var(--color-dark);
+        margin-bottom: 4px;
+    }
+
+    &__category {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-dark);
+        margin-bottom: 10px;
+    }
+
+    &__post {
+        @include flex-all-sb;
+    }
+
+    &__name {
+        @include font(var(--typo-1), 14px, var(--fw-semibold));
+        color: var(--color-dark);
+    }
+
+    &__date {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: var(--color-gray);
+    }
+
+    &__slider {
+        @include mobile {
+            position: relative;
+        }
+    }
+
+    &__slider-container {
+        @include mobile {
+            height: 100%;
+            overflow-x: hidden;
+            margin: 0 auto;
+            width: 340px;
+        }
+    }
+
+    &__swiper-pagination {
+        bottom: -34px !important;
+        display: none;
+        gap: 4px;
+        left: 50% !important;
+        position: absolute;
+        transform: translateX(-50%);
+        z-index: 2;
+
+        @include tablet {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        @include size(8px);
+        background-color: var(--color-stroke);
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: var(--color-gray-50);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,118 @@
+.review-main {
+    margin-top: 80px;
+
+    &__container {
+        align-items: center;
+        display: grid;
+        gap: 0 240px;
+        grid-template-columns: 580px 360px;
+
+        @include tablet {
+            gap: 48px 0;
+            grid-template-columns: auto;
+        }
+
+        @include mobile {
+            padding: 0 20px;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            align-items: center;
+        }
+
+        &:first-child {
+            @include tablet {
+                margin: 0 auto;
+                width: 580px;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+
+    &__content {
+        margin-bottom: 48px;
+
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        @include font(var(--typo-1), 46px, var(--fw-semibold));
+        color: var(--color-dark);
+        line-height: normal;
+        margin-bottom: 12px;
+
+        @include mobile {
+            font-size: 38px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 173px 155px 158px;
+        grid-template-rows: 1fr;
+        gap: 0px 30px;
+
+        @include mobile {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__brand {
+        @include size(100%, 15px);
+        display: inline-flex;
+        position: relative;
+
+        @include mobile {
+            @include size(83px, 24px);
+        }
+
+        &::before {
+            @include absolute(50%, null, null, 0);
+            @include size(100%, 24px);
+            background: {
+                image: url("../img/thesishelpers-brand.svg");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translateY(-50%);
+
+            @include mobile {
+                background-image: url("../img/thesishelpers-brand-mb.svg");
+            }
+        }
+
+        &:nth-child(2) {
+            &::before {
+                background: {
+                    image: url("../img/sitejabber-brand.svg");
+                };
+
+                @include mobile {
+                    background-image: url("../img/sitejabber-brand-mb.svg");
+                }
+            }
+        }
+
+        &:last-child {
+            &::before {
+                background: {
+                    image: url("../img/trustpilot-brand.svg");
+                };
+
+                @include mobile {
+                    background-image: url("../img/trustpilot-brand-mb.svg");
+                }
+            }
+        }
+    }
+}

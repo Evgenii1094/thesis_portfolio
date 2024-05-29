@@ -1,0 +1,8 @@
+.dropdown-menu {
+    &.is-opened {
+        .header-nav__dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

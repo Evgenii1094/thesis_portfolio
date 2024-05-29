@@ -1,0 +1,19 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 48px;
+    text-align: center;
+
+    &__text {
+        @include font(var(--typo-1), 36px, var(--fw-semibold));
+        color: var(--color-dark);
+        line-height: normal;
+        margin-bottom: 12px;
+    }
+
+    &__text-small {
+        @include font(var(--typo-1), 16px, var(--fw-normal));
+        color: var(--color-gray);
+    }
+}

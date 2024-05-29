@@ -1,0 +1,109 @@
+.blog-news {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 80px 0;
+
+    @include tablet {
+        margin: 0 auto;
+        max-width: 680px;
+        width: 100%;
+    }
+
+    &__title {
+        @include font(var(--typo-1), 42px, var(--fw-semibold));
+        color: var(--color-dark);
+        line-height: 1.2;
+        margin: 24px 0 12px;
+
+        @include mobile {
+            font-size: 28px;
+        }
+    }
+
+    &__paragraph {
+        color: var(--color-dark);
+        margin-bottom: 12px;
+    }
+
+    &__info {
+        @include flex-all-sb;
+        margin-bottom: 12px;
+
+        @include mobile {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    &__name {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-blue);
+        padding-left: 18px;
+        position: relative;
+
+        &::before {
+            @include absolute(50%, null, null, 0);
+            @include size(12px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.06252 3.375C7.97064 4.61414 7.03127 5.625 6.00002 5.625C4.96877 5.625 4.02775 4.61438 3.93752 3.375C3.84377 2.08594 4.75783 1.125 6.00002 1.125C7.24221 1.125 8.15627 2.10938 8.06252 3.375Z' stroke='%232458A4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.00006 7.125C3.96099 7.125 1.89146 8.25 1.50849 10.3734C1.46232 10.6294 1.60717 10.875 1.87506 10.875H10.1251C10.3932 10.875 10.538 10.6294 10.4919 10.3734C10.1087 8.25 8.03912 7.125 6.00006 7.125Z' stroke='%232458A4' stroke-miterlimit='10'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translateY(-50%);
+        }
+    }
+
+    &__date,
+    &__like {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-gray);
+        padding-left: 18px;
+        position: relative;
+    }
+
+    &__date {
+        margin-right: 20px;
+
+        &::before {
+            @include absolute(50%, null, null, 0);
+            @include size(12px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cg clip-path='url(%23clip0_840_25477)'%3E%3Cpath d='M6 1C3.23958 1 1 3.23958 1 6C1 8.76042 3.23958 11 6 11C8.76042 11 11 8.76042 11 6C11 3.23958 8.76042 1 6 1Z' stroke='%235D6675' stroke-miterlimit='10'/%3E%3Cpath d='M6 3V7H9' stroke='%235D6675' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_840_25477'%3E%3Crect width='12' height='12' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translateY(-50%);
+        }
+    }
+
+    &__like {
+        &::before {
+            @include absolute(50%, null, null, 0);
+            @include size(12px);
+            background: {
+                image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M8.52383 2C6.83329 2 6 3.63636 6 3.63636C6 3.63636 5.16671 2 3.47618 2C2.10229 2 1.01433 3.12858 1.00027 4.47525C0.971622 7.27061 3.25874 9.25853 5.76564 10.9291C5.83475 10.9753 5.91641 11 6 11C6.08359 11 6.16525 10.9753 6.23436 10.9291C8.741 9.25853 11.0281 7.27061 10.9997 4.47525C10.9857 3.12858 9.89771 2 8.52383 2Z' stroke='%235D6675' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translateY(-50%);
+        }
+    }
+
+    &__btn {
+        @include font(var(--typo-1), 16px, var(--fw-semibold));
+        @include trs();
+        color: var(--color-gray);
+        display: flex;
+        justify-content: flex-end;
+        text-decoration: none;
+
+        @include on-event {
+            text-decoration: underline;
+        }
+    }
+
+    &__show-btn {
+        margin-top: -32px;
+    }
+}

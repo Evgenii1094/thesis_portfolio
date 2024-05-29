@@ -1,0 +1,52 @@
+.chat,
+.chat-footer {
+    @include fixed(null, 20px, 20px, null);
+    @include size(80px);
+    @include trs;
+    background-color: var(--color-blue);
+    border-radius: 50%;
+    z-index: 100;
+
+    @include mobile {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    &__icon {
+
+        &::before {
+            @include absolute(50%, null, null, 50%);
+            @include size(40px);
+            background: {
+                image: url("../img/chat.svg");
+                repeat: no-repeat;
+            };
+            content: '';
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @include on-event {
+        opacity: 0.6;
+    }
+}
+
+.chat-footer {
+    @include absolute(-30px, 0);
+
+    box-shadow: 4px 5px 15px 0px rgba(199, 199, 199, 0.10), 18px 21px 28px 0px rgba(199, 199, 199, 0.09), 40px 47px 37px 0px rgba(199, 199, 199, 0.05), 71px 84px 44px 0px rgba(199, 199, 199, 0.01), 111px 131px 48px 0px rgba(199, 199, 199, 0.00);
+    display: none;
+
+    @include tablet {
+        top: 110px;
+    }
+
+    @include mobile {
+        box-shadow: none;
+        top: -120px;
+    }
+
+    .is-page-error & {
+        display: flex;
+    }
+}

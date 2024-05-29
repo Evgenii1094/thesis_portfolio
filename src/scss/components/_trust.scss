@@ -1,0 +1,54 @@
+.trust {
+    .title {
+        margin-bottom: 0;
+        text-align: left;
+
+        @include mobile {
+            text-align: center;
+        }
+    }
+
+    &__wrapper {
+        @include flex-v-center;
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        &:first-child {
+            margin-right: 60px;
+            width: 780px;
+
+            @include tablet {
+                margin-right: 20px;
+            }
+
+            @include mobile {
+                margin: 0 0 20px;
+                width: 100%;
+            }
+        }
+
+        &:last-child {
+            flex-shrink: 0;
+        }
+    }
+
+    &__paragraph {
+        &:not(&:last-child) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__picture {
+        img {
+            @include size(340px);
+
+            @include tablet {
+                @include size(280px)
+            }
+        }
+    }
+}

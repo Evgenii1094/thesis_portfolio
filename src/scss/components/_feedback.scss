@@ -1,0 +1,261 @@
+.feedback {
+    $this: &;
+
+    &__wrapper {
+        display: grid;
+        gap: 0 20px;
+        grid-template-columns: 380px 780px;
+
+        @include tablet {
+            grid-template-columns: auto;
+        }
+    }
+
+    &__sidebar {
+        @include trs();
+        background-color: $color-white;
+        display: flex;
+        flex-direction: column;
+        gap: 48px 0;
+        padding-bottom: 20px;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto auto;
+            padding-bottom: 0;
+            margin-bottom: 48px;
+        }
+
+        &.is-fixed {
+            position: fixed;
+            top: 70px;
+            z-index: 1;
+            width: 380px;
+
+            @include tablet {
+                left: 50%;
+                padding: 0 20px;
+                transform: translateX(-50%);
+                top: 68px;
+                width: 100%;
+            }
+        }
+    }
+
+    &__header {
+        @include tablet {
+            grid-column: span 1;
+        }
+
+        @include mobile {
+            grid-column: span 2;
+            text-align: center;
+        }
+    }
+
+    &__sidebar-wrap {
+        width: 380px;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        @include font(var(--typo-1), 36px, var(--fw-semibold));
+        color: var(--color-dark);
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    &__list {
+        width: 317px;
+
+        @include tablet {
+            display: grid;
+            grid-column: span 2;
+            grid-row: 2;
+            grid-template-columns: repeat(3, 243px);
+            justify-content: center;
+            width: 100%;
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(1, 340px);
+            grid-row: 3;
+        }
+    }
+
+    &__item {
+        @include trs();
+        border: 1px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 24px 20px;
+
+        @include tablet {
+            display: flex;
+            justify-content: center;
+        }
+
+        @include on-event {
+            border-color: var(--color-blue);
+        }
+
+        &.is-active {
+            background-color: var(--color-bg);
+        }
+    }
+
+    &__group {
+        @include flex-v-center;
+
+        @include tablet {
+            grid-column: span 1;
+            justify-content: flex-end;
+        }
+
+        @include mobile {
+            grid-column: span 2;
+            justify-content: center;
+            margin-top: -24px;
+        }
+    }
+
+    &__picture {
+        margin-right: 20px;
+    }
+
+    &__rating {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__rate {
+        @include size(217px, 32px);
+        position: relative;
+
+        &::before {
+            @include absolute(0, null, null, 0);
+            @include size(217px, 32px);
+            background: {
+                image: url("../img/thesishelpers-rating.svg");
+                repeat: no-repeat;
+            };
+            content: '';
+        }
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__column {
+        @include trs();
+        display: grid;
+        gap: 48px 0;
+        min-height: 1120px;
+
+        &.is-hide {
+            @include absolute(0, null, null, 0);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.is-show {
+            opacity: 1;
+            position: relative;
+            visibility: visible;
+        }
+    }
+
+    &__inner {
+        border: 1px solid var(--color-stroke);
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        padding: 24px 32px;
+
+        #{$this}__wrap {
+            &:first-child {
+                border-bottom: 1px solid var(--color-stroke);
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 12px;
+            }
+
+            &:last-child {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__stars {
+        position: relative;
+
+        .is-thesis & {
+            &::before {
+                @include absolute(0, null, null, 0);
+                @include size(88px, 15px);
+                background: {
+                    image: url("../img/rating-red.svg");
+                    repeat: no-repeat;
+                };
+                content: '';
+            }
+        }
+
+        .is-trustpilot & {
+            &::before {
+                @include absolute(0, null, null, 0);
+                @include size(86px, 14px);
+                background: {
+                    image: url("../img/rating-green.svg");
+                    repeat: no-repeat;
+                };
+                content: '';
+            }
+        }
+
+        .is-sitejabber & {
+            &::before {
+                @include absolute(0, null, null, 0);
+                @include size(86px, 14px);
+                background: {
+                    image: url("../img/rating-orange.svg");
+                    repeat: no-repeat;
+                };
+                content: '';
+            }
+        }
+    }
+
+    &__writer,
+    &__name {
+        @include font(var(--typo-1), 14px, var(--fw-semibold));
+        color: var(--color-dark);
+    }
+
+    &__subtitle {
+        @include font(var(--typo-1), 16px, var(--fw-semibold));
+        color: var(--color-dark);
+        margin: 10px 0 5px;
+    }
+
+    &__descr {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: var(--color-dark);
+    }
+
+    &__date {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: var(--color-gray);
+    }
+
+    &__button {
+        text-align: center;
+    }
+}

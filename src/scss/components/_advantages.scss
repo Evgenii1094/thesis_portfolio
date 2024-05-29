@@ -1,0 +1,150 @@
+.advantages {
+    $this: &;
+
+    &__wrapper {
+        @include flex-all-sb;
+
+        @include tablet {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__column {
+        &:first-child {
+            @include flex-all-center;
+            background-color: var(--color-bg);
+            border-radius: 6px;
+            flex-direction: column;
+            padding: 63px 48px;
+            width: 380px;
+
+            @include tablet {
+                flex-direction: row;
+                padding: 48px;
+                width: 100%;
+            }
+
+            @include mobile {
+                flex-direction: column;
+                padding: 48px 24px;
+            }
+        }
+
+        &:last-child {
+            width: 680px;
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        .btn {
+            @include tablet {
+                min-width: 177px;
+            }
+        }
+    }
+
+    &__inner {
+        margin-bottom: 48px;
+        text-align: center;
+
+        @include tablet {
+            text-align: left;
+            margin: 0 24px 0 0;
+            width: 100%;
+        }
+
+        @include mobile {
+            margin: 0 0 24px;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: 12px;
+    }
+
+    &__icon-btn {
+        @include size(16px);
+        margin-right: 8px;
+    }
+
+    &__item {
+        align-items: center;
+        display: flex;
+        margin-bottom: 48px;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        &:first-child {
+            #{$this}__icon {
+                &::before {
+                    background: {
+                        image: url("../img/adv-1.svg");
+                        repeat: no-repeat;
+                    };
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            #{$this}__icon {
+                &::before {
+                    background: {
+                        image: url("../img/adv-2.svg");
+                        repeat: no-repeat;
+                    };
+                }
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+
+            @include tablet {
+                margin-bottom: 48px;
+            }
+
+            #{$this}__icon {
+                &::before {
+                    background: {
+                        image: url("../img/adv-3.svg");
+                        repeat: no-repeat;
+                    };
+                }
+            }
+        }
+    }
+
+    &__icon {
+        @include size(80px);
+        flex-shrink: 0;
+        margin-right: 24px;
+        position: relative;
+
+        @include mobile {
+            margin: 0 0 24px;
+        }
+
+        &::before {
+            @include absolute(50%, null, null, 50%);
+            @include size(80px, 100%);
+            content: '';
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__info {
+        line-height: normal;
+        margin-bottom: 8px;
+    }
+
+    &__content {
+        @include mobile {
+            text-align: center;
+        }
+    }
+}

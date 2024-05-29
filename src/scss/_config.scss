@@ -1,0 +1,31 @@
+// Colors
+$color-white: #fff;
+$color-black: #000;
+
+:root {
+    // Font family
+    --typo-1: 'Work Sans', sans-serif;
+
+    // Color variable
+    --color-dark: #2E3543;
+    --color-gray: #5D6675;
+    --color-gray-50: #AEB3BA;
+    --color-accent: #E44B60;
+    --color-stroke: #EBECEE;
+    --color-bg: #EFF6FA;
+    --color-blue: #2458A4;
+    --color-green: #00B67A;
+
+
+    // Font weight
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+}
+

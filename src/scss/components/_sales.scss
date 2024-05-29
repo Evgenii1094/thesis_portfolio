@@ -1,0 +1,81 @@
+.sales {
+    $this: &;
+
+    .title {
+        margin: 0 auto 48px;
+        width: 380px;
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 0 70px;
+        grid-template-columns: repeat(3, 280px);
+        justify-content: center;
+
+        @include tablet {
+            gap: 48px 0;
+            grid-template-columns: auto;
+        }
+    }
+
+    &__item {
+        @include flex-v-center;
+        position: relative;
+
+        &:nth-child(2) {
+            #{$this}__icon {
+                &::before {
+                    background-image: url("../img/sales-2.svg");
+                }
+            }
+        }
+
+        &:last-child {
+            &::after {
+                @include absolute(-30px, -20px);
+                @include size(80px, 73px);
+                background: {
+                    image: url("../img/sales-4.svg");
+                    repeat: no-repeat;
+                };
+                content: '';
+
+                @include tablet {
+                    right: -50px;
+                }
+            }
+
+            #{$this}__icon {
+                &::before {
+                    background-image: url("../img/sales-3.svg");
+                }
+            }
+        }
+    }
+
+    &__icon {
+        @include size(22px, 84px);
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+
+        &::before {
+            @include absolute(0, null, null, 0);
+            @include size(22px, 84px);
+            background: {
+                image: url("../img/sales-1.svg");
+            };
+            content: '';
+        }
+    }
+
+    &__num {
+        @include font(var(--typo-1), 46px, var(--fw-semibold));
+        color: var(--color-blue);
+        margin-bottom: 8px;
+    }
+}

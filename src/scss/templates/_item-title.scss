@@ -1,0 +1,4 @@
+.item-title {
+    @include font(var(--typo-1), 22px, var(--fw-semibold));
+    color: var(--color-dark);
+}

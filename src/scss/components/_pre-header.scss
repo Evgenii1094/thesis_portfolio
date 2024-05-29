@@ -1,0 +1,23 @@
+.pre-header {
+    @include flex-all-center;
+    background-color: var(--color-bg);
+    padding: 12px 130px;
+
+    @include tablet {
+        padding: 12px 20px;
+    }
+
+    @include mobile {
+        flex-direction: column;
+        padding: 12px 10px;
+    }
+
+    &__title {
+        margin-right: 40px;
+
+        @include mobile {
+            font-size: 18px;
+            margin: 0 0 12px;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+<section class="section review-form">
+    <div class="container">
+        <div class="review-form__wrapper">
+            <h2 class="review-form__title">Leave your review</h2>
+            <form class="review-form__form" action="#">
+                <div class="review-form__inner">
+                    <label class="review-form__label" for="review-name">Name</label>
+                    <input
+                        class="review-form__area"
+                        type="text"
+                        id="review-name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required>
+                </div>
+
+                <div class="review-form__inner">
+                    <label class="review-form__label" for="review-email">E-mail</label>
+                    <input
+                        class="review-form__area"
+                        type="email"
+                        id="review-email"
+                        name="email"
+                        placeholder="Enter your e-mail"
+                        required>
+                </div>
+
+                <div class="review-form__inner">
+                    <label class="review-form__label" for="review-dropdown">Rate</label>
+                    <div class="review-form__select-block">
+                        <select class="review-form__select" id="review-dropdown" name="dropdown" required>
+                            <option value disabled selected><span class="is-disabled">Amazing</span></option>
+                            <option value="amazing">Amazing</option>
+                            <option value="good">Good</option>
+                            <option value="avarage">Avarage</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="review-form__inner">
+                    <label class="review-form__label" for="review-comment">Message</label>
+                    <textarea
+                        class="review-form__area"
+                        id="review-comment"
+                        name="comment"
+                        rows="6"
+                        placeholder="Share your experience"></textarea>
+                </div>
+
+                <button type="submit" class="btn review-form__btn">Send</button>
+            </form>
+        </div>
+    </div>
+</section>
